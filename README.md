@@ -31,8 +31,8 @@ Aşağıdakı cədvəllər arasında əlaqələr qurularaq analiz aparılmışd�
 
 Layihənin əsasını təşkil edən mənfəət və satış hesablamaları üçün istifadə olunan SQL kodu:
 
-```sql
-/* Ümumi Xalis Mənfəətin Hesablanması */
+SQL
+Ümumi Xalis Mənfəətin Hesablanması 
 SELECT 
     p.product_name,
     SUM(((p.unit_price * od.quantity) - od.discount) - (p.cost_price * od.quantity)) AS net_profit
