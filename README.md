@@ -336,7 +336,7 @@
             </div>
         </div>
         <footer>
-            <p>© 2024 Retail E-commerce Sales Analysis Project | Prepared for Educational Purposes</p>
+            <p>© 2026 Retail E-commerce Sales Analysis Project | Prepared for Educational Purposes</p>
             <p>Designed to develop practical skills in SQL, Excel, and Business Presentation</p>
         </footer>
     </div>
