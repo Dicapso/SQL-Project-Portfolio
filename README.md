@@ -1,4 +1,4 @@
-🛒 RETAIL (E-COMMERCE) SALES ANALYSIS PROJECT
+<H1> 🛒 RETAIL (E-COMMERCE) SALES ANALYSIS PROJECT <\H1>
 <br>
 📌 1. LAYİHƏNİN MƏQSƏDİ
 Bu layihə e-ticarət platformasının satış məlumatlarını SQL vasitəsilə analiz etmək, müştəri və məhsul davranışlarını öyrənmək və Excel-də vizuallaşdırmaq üçün hazırlanmışdır. Layihənin əsas hədəfi satış trendlərini müəyyən etmək və gəlirliliyi artırmaq üçün data-əsaslı tövsiyələr verməkdir.
