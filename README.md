@@ -1,42 +1,54 @@
-##📊 E-Ticarət Satış Analizi Proyekti (SQL & Excel)
-📌 Layihə haqqında
-Bu layihə e-ticarət platformasının satış məlumatlarını təhlil etmək üçün hazırlanmışdır. Əsas məqsəd SQL vasitəsilə böyük verilənlər bazasından biznes üçün əhəmiyyətli məlumatları (insaytları) çıxarmaq, müştəri və məhsul davranışlarını öyrənmək və nəticələri Excel-də vizuallaşdırmaqdır.
+🛒 RETAIL (E-COMMERCE) SALES ANALYSIS PROJECT
+<br>
+📌 1. LAYİHƏNİN MƏQSƏDİ
+Bu layihə e-ticarət platformasının satış məlumatlarını SQL vasitəsilə analiz etmək, müştəri və məhsul davranışlarını öyrənmək və Excel-də vizuallaşdırmaq üçün hazırlanmışdır. Layihənin əsas hədəfi satış trendlərini müəyyən etmək və gəlirliliyi artırmaq üçün data-əsaslı tövsiyələr verməkdir.
 
-🛠 İstifadə Olunan Alətlər
-SQL: Verilənlərin çıxarılması, aqreqasiyası və təmizlənməsi.
-MS Excel: Pivot cədvəllər, Dashboard və vizuallaşdırma.
-MS PowerPoint: Yekun hesabat və strateji tövsiyələr.
-📂 Verilənlər Bazası Strukturu (Database Schema)
-Layihədə 5 əsas cədvəldən istifadə olunmuşdur:
+🏗 2. VERİLƏNLƏR BAZASI STRUKTURU (DATA SCHEMA)
+Layihədə istifadə olunan 5 əsas cədvəl aşağıdakı məlumatları əhatə edir:
 
-CUSTOMERS: Müştəri məlumatları (ID, ad, cins, yaş, şəhər, qeydiyyat tarixi).
-PRODUCTS: Məhsul portfeli (ID, ad, kateqoriya, satış qiyməti, maya dəyəri).
-ORDERS: Sifarişlərin ümumi vəziyyəti (ID, tarix, ödəniş üsulu, status).
-ORDER_DETAILS: Sifarişlərin detalları (miqdar, endirim məbləği).
-RETURNS: Qaytarılan məhsullar və səbəbləri.
-🚀 Analiz Mərhələləri və Tapşırıqlar
-I. Satış Göstəriciləri
-Ümumi satış məbləğinin hesabı: (unit_price * quantity) - discount.
-Aylar üzrə satış trendi və sifariş sayının dinamikası.
-Məhsul əsaslı mənfəət analizi: Profit = (Revenue - Discount) - Cost.
-TOP 5 gəlir gətirən məhsul və ən aktiv 5 müştərinin müəyyən edilməsi.
-II. Endirim və Ödəniş Analizi
-Endirimlərin satış həcminə təsirinin yoxlanılması.
-Ödəniş üsullarının (Nəqd, Kart, Köçürmə) payının analizi.
-Tamamlanmış və ləğv edilmiş sifarişlərin nisbəti.
-III. Qaytarılma Analizi
-Ümumi qaytarılma faizinin (Return Rate) hesablanması.
-Ən çox qaytarılan məhsul kateqoriyalarının tapılması.
-Qaytarılma səbəblərinin (Müştəri narazılığı, Yanlış məhsul, Defekt) analizi.
-IV. Bonus Analizlər
-Kateqoriya üzrə orta mənfəət faizi.
-Yaş qruplarına görə (18-24, 25-35, 36-50, 50+) satış payı.
-2023 və 2024-cü illər üzrə müqayisəli artım (Growth Rate).
-📈 Əsas Tapıntılar (Key Insights)
-Demoqrafiya: Ən yüksək alıcılıq qabiliyyəti 50+ yaş qrupundadır, lakin gənclər arasında rəqəmsal satış potensialı artırılmalıdır.
-Logistika: Qaytarılmaların 36%-i yanlış məhsul göndərilməsi ilə bağlıdır, bu da anbar idarəetməsində boşluq olduğunu göstərir.
-Mövsümilik: Satışların pik nöqtəsi İyul və Oktyabr aylarına təsadüf edir. Noyabr ayında ("Black Friday" dövrü) gözlənilməz düşüş müşahidə olunur.
-💡 Tövsiyələr
-Anbar Optimizasiyası: Yanlış məhsul göndərilməsini azaltmaq üçün barkod sisteminə keçid edilməlidir.
-Marketinq: Loyal müştərilər (TOP 5) üçün xüsusi VIP proqramlar tətbiq olunmalıdır.
-Endirim Strategiyası: Mənfəəti mənfiyə salan aqressiv endirim kampaniyaları yenidən nəzərdən keçirilməlidir.
+CUSTOMERS: Müştəri demoqrafiyası (Yaş, Cins, Şəhər).
+PRODUCTS: Məhsul portfeli, maya dəyəri və satış qiyməti.
+ORDERS: Sifariş statusları və ödəniş üsulları.
+ORDER_DETAILS: Sifariş miqdarı və endirim məlumatları.
+RETURNS: Qaytarılma halları və səbəbləri.
+💻 3. SQL ANALİZLƏRİ (DATA EXTRACTION)
+Analiz zamanı istifadə olunan əsas skript nümunələri:
+
+🔹 Ümumi Mənfəətin Hesablanması:
+SQL
+
+SELECT 
+    p.product_name,
+    SUM(((p.unit_price * od.quantity) - od.discount) - (p.cost_price * od.quantity)) AS total_profit
+FROM ORDER_DETAILS od
+JOIN PRODUCTS p ON od.product_id = p.product_id
+GROUP BY p.product_name
+ORDER BY total_profit DESC;
+🔹 Qaytarılma Faizinin Tapılması:
+SQL
+
+SELECT 
+    (CAST(COUNT(r.return_id) AS FLOAT) / COUNT(o.order_id)) * 100 AS return_rate
+FROM ORDERS o
+LEFT JOIN RETURNS r ON o.order_id = r.order_id;
+📊 4. ƏSAS TAPINTILAR (KEY FINDINGS)
+Excel və SQL analizi nəticəsində əldə olunan mühüm insaytlar:
+
+Yaş Seqmenti: Ən yüksək satış 50+ yaş qrupundadır.
+Satış Trendi: İyul və Oktyabr ayları ən yüksək satış dövrləridir.
+Qaytarılma Problemi: Ümumi satışların 19%-i geri qaytarılır.
+Ödəniş: Nəqd və Kart ödənişləri demək olar ki, bərabər paya malikdir (31-35%).
+💡 5. STRATEJİ TÖVSİYƏLƏR
+Analiz nəticəsində şirkət rəhbərliyi üçün aşağıdakı tövsiyələr hazırlanmışdır:
+
+Logistika: Qaytarılmaların 36%-i olan "Yanlış Məhsul" problemini həll etmək üçün anbar barkod sisteminə keçid edilməlidir.
+Məhsul Təqdimatı: 37% "Müştəri Narazılığı"nı azaltmaq üçün vebsaytda məhsulların video-icmalları yerləşdirilməlidir.
+Marketinq: Gənc yaş qrupunu (18-24) cəlb etmək üçün xüsusi sosial media kampaniyaları başladılmalıdır.
+Qiymətləndirmə: Mənfəəti mənfiyə salan aqressiv endirim kampaniyaları optimallaşdırılmalıdır.
+📁 6. LAYİHƏ MATERİALLARI
+📂 /sql_queries — SQL skriptləri.
+📂 /excel_dashboard — Analiz faylları və chart-lar.
+📂 /presentation — PowerPoint hesabatı.
+<br>
+Author: [Tural Zamanlı]
+Tools: SQL, MS Excel, PowerPoint
