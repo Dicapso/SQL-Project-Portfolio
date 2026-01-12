@@ -16,27 +16,23 @@
             --info: #16a085;
             --danger: #e74c3c;
         }
-        
-        * {
+         {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body {
+         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
         }
-        
-        .container {
+         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
         }
-        
-        header {
+         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 30px 20px;
@@ -45,19 +41,16 @@
             margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 20px;
         }
-        
         .badge {
             display: inline-block;
             padding: 5px 12px;
@@ -67,20 +60,16 @@
             margin: 0 5px;
             color: white;
         }
-        
         .badge-primary {
             background-color: var(--primary);
         }
-        
         .badge-secondary {
             background-color: var(--secondary);
         }
-        
-        .badge-accent {
+         .badge-accent {
             background-color: var(--accent);
         }
-        
-        .section {
+         .section {
             background: white;
             border-radius: 8px;
             padding: 25px;
@@ -88,11 +77,9 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
-        
-        .section:hover {
+         .section:hover {
             transform: translateY(-2px);
         }
-        
         h2 {
             color: var(--primary);
             border-bottom: 3px solid var(--secondary);
@@ -100,62 +87,51 @@
             margin-bottom: 20px;
             font-size: 2rem;
         }
-        
         h3 {
             color: var(--secondary);
             margin: 25px 0 15px;
             font-size: 1.5rem;
         }
-        
         h4 {
             color: var(--accent);
             margin: 20px 0 10px;
             font-size: 1.2rem;
         }
-        
-        p {
+         p {
             margin-bottom: 15px;
             text-align: justify;
         }
-        
         ul, ol {
             margin-bottom: 20px;
             padding-left: 30px;
         }
-        
         li {
             margin-bottom: 8px;
         }
-        
         .table-container {
             overflow-x: auto;
             margin: 20px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 0.95rem;
         }
-        
-        th, td {
+         th, td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
-        
         th {
             background-color: #f2f2f2;
             font-weight: bold;
             color: var(--primary);
         }
-        
-        tr:nth-child(even) {
+         tr:nth-child(even) {
             background-color: #fafafa;
         }
-        
         .highlight {
             background-color: #fffde7;
             padding: 15px;
@@ -163,7 +139,6 @@
             margin: 15px 0;
             border-radius: 5px;
         }
-        
         .tip {
             background-color: #e3f2fd;
             padding: 15px;
@@ -171,7 +146,6 @@
             margin: 15px 0;
             border-radius: 5px;
         }
-        
         .warning {
             background-color: #ffebee;
             padding: 15px;
@@ -179,7 +153,6 @@
             margin: 15px 0;
             border-radius: 5px;
         }
-        
         .success {
             background-color: #e8f5e9;
             padding: 15px;
@@ -187,14 +160,12 @@
             margin: 15px 0;
             border-radius: 5px;
         }
-        
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
-        
         .card {
             background: white;
             border-radius: 8px;
@@ -203,13 +174,11 @@
             border: 1px solid #eee;
             transition: all 0.3s ease;
         }
-        
         .card:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
             border-color: var(--secondary);
         }
-        
         .card-header {
             color: var(--primary);
             font-weight: bold;
@@ -218,17 +187,14 @@
             display: flex;
             align-items: center;
         }
-        
         .card-header i {
             margin-right: 10px;
             color: var(--secondary);
         }
-        
         .timeline {
             position: relative;
             padding: 20px 0;
         }
-        
         .timeline::before {
             content: '';
             position: absolute;
@@ -238,13 +204,11 @@
             width: 2px;
             background: var(--secondary);
         }
-        
         .timeline-item {
             position: relative;
             margin-bottom: 30px;
             padding-left: 60px;
         }
-        
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -257,7 +221,6 @@
             border: 3px solid white;
             box-shadow: 0 0 0 2px var(--secondary);
         }
-        
         .timeline-date {
             position: absolute;
             left: 0;
@@ -265,17 +228,14 @@
             font-weight: bold;
             color: var(--secondary);
         }
-        
         .progress-container {
             margin: 20px 0;
         }
-        
         .progress-title {
             display: flex;
             justify-content: space-between;
             margin-bottom: 5px;
         }
-        
         .progress-bar {
             height: 10px;
             background-color: #eee;
@@ -283,20 +243,17 @@
             overflow: hidden;
             margin-bottom: 15px;
         }
-        
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--secondary), var(--primary));
             border-radius: 5px;
         }
-        
         .icon-list {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             margin: 15px 0;
         }
-        
         .icon-item {
             display: flex;
             align-items: center;
@@ -306,13 +263,11 @@
             border-radius: 20px;
             border: 1px solid #ddd;
         }
-        
-        .icon-item i {
+         .icon-item i {
             font-size: 1.2rem;
             color: var(--secondary);
         }
-        
-        footer {
+         footer {
             text-align: center;
             padding: 20px;
             margin-top: 30px;
@@ -320,25 +275,20 @@
             border-top: 1px solid #ddd;
             font-size: 0.9rem;
         }
-        
-        @media (max-width: 768px) {
+         @media (max-width: 768px) {
             .container {
                 padding: 15px;
                 margin: 10px auto;
             }
-            
             h1 {
                 font-size: 2rem;
             }
-            
             h2 {
                 font-size: 1.5rem;
             }
-            
             .card-grid {
                 grid-template-columns: 1fr;
             }
-            
             .table-container {
                 font-size: 0.85rem;
             }
@@ -356,12 +306,11 @@
                 <span class="badge badge-accent">PowerPoint Presentation</span>
             </div>
         </header>
-
-        <div class="section">
+<div class="section">
             <h2>🎯 Layihənin Məqsədi</h2>
             <p>Bu layihədə tələbələr e-ticarət satış məlumatlarını SQL vasitəsilə təhlil edərək, müştəri və məhsul davranışını öyrənməli, gəlir və satış trendini analiz etməlidirlər. Nəticələri Excel-də vizuallaşdırmalı və PowerPoint-də təqdim etməlidirlər.</p>
             
-            <div class="highlight">
+<div class="highlight">
                 <strong>Əsas Məqsədlər:</strong>
                 <ul>
                     <li>Müştəri davranışının təhlili və seqmentasiyası</li>
@@ -373,11 +322,10 @@
                 </ul>
             </div>
         </div>
-
-        <div class="section">
+ <div class="section">
             <h2>🗂️ İstifadə Olunan Cədvəllər</h2>
             
-            <div class="card-grid">
+<div class="card-grid">
                 <div class="card">
                     <div class="card-header">CUSTOMERS</div>
                     <div class="table-container">
@@ -399,8 +347,7 @@
                         </table>
                     </div>
                 </div>
-                
-                <div class="card">
+                 <div class="card">
                     <div class="card-header">PRODUCTS</div>
                     <div class="table-container">
                         <table>
@@ -420,8 +367,7 @@
                         </table>
                     </div>
                 </div>
-                
-                <div class="card">
+                 <div class="card">
                     <div class="card-header">ORDERS</div>
                     <div class="table-container">
                         <table>
@@ -442,8 +388,7 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="card-grid">
+             <div class="card-grid">
                 <div class="card">
                     <div class="card-header">ORDER_DETAILS</div>
                     <div class="table-container">
@@ -462,8 +407,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-                
+                </div> 
                 <div class="card">
                     <div class="card-header">RETURNS</div>
                     <div class="table-container">
@@ -486,10 +430,8 @@
                 </div>
             </div>
         </div>
-
         <div class="section">
-            <h2>📋 Tapşırıqlar</h2>
-            
+            <h2>📋 Tapşırıqlar</h2> 
             <h3>I. Satış Göstəriciləri</h3>
             <ol>
                 <li><strong>Ümumi satış məbləğini hesabla</strong> - (unit_price × quantity - discount)</li>
@@ -499,21 +441,18 @@
                 <li><strong>Ən çox alış-veriş edən 5 müştəri</strong> - Top 5 by total spending</li>
                 <li><strong>Şəhərlər üzrə ümumi satış və sifariş sayı</strong> - City-based analysis</li>
             </ol>
-            
             <h3>II. Endirim və Ödəniş Analizi</h3>
             <ol start="7">
                 <li><strong>Endirimin satışa təsirini analiz et</strong> - Endirimli vs endirimsiz sifarişlər</li>
                 <li><strong>Ödəniş üsullarına görə satış bölgüsünü göstər</strong> - Payment method distribution</li>
                 <li><strong>Ləğv edilmiş və tamamlanmış sifarişlərin nisbətini tap</strong> - Cancelled vs Completed</li>
             </ol>
-            
             <h3>III. Qaytarılma Analizi</h3>
             <ol start="10">
                 <li><strong>Qaytarılma faizi</strong> - return count / total orders</li>
                 <li><strong>Ən çox qaytarılan məhsul və kateqoriya</strong> - Most returned products/categories</li>
                 <li><strong>Qaytarılma səbəblərinin payı</strong> - Distribution of return reasons</li>
             </ol>
-            
             <h3>IV. Bonus Suallar</h3>
             <ul>
                 <li><strong>Hər kateqoriyanın orta mənfəət faizi (%)</strong> - Average profit margin by category</li>
@@ -521,74 +460,61 @@
                 <li><strong>2023 və 2024-cü illər üzrə satış artımı</strong> - Year-over-year growth</li>
             </ul>
         </div>
-
         <div class="section">
             <h2>📊 Excel Mərhələsi</h2>
             <p>SQL nəticələrini Excel-ə export et və aşağıdakı vizuallaşdırmaları yarat:</p>
-            
             <div class="card-grid">
                 <div class="card">
                     <div class="card-header">📈 Ay Üzrə Satış Trendi</div>
                     <p>Xətti qrafik vasitəsilə aylıq satış dinamikasını göstər. Zamanla satışın necə dəyişdiyini analiz et.</p>
                 </div>
-                
                 <div class="card">
                     <div class="card-header">🏆 Top 5 Məhsul və Müştəri</div>
                     <p>Sütun qrafikləri ilə ən çox gəlir gətirən məhsulları və ən çox alış-veriş edən müştəriləri göstər.</p>
                 </div>
-                
                 <div class="card">
                     <div class="card-header">↩️ Qaytarılma Faizi</div>
                     <p>Dairəvi diaqramla ümumi qaytarma faizini göstər. Problem sahələrini müəyyən et.</p>
                 </div>
-                
                 <div class="card">
                     <div class="card-header">💳 Ödəniş Üsullarının Payı</div>
                     <p>Tort diaqramı ilə ödəniş üsullarının satışda payını göstər. Müştərilərin preferensialarını anla.</p>
                 </div>
             </div>
-            
             <div class="tip">
                 <strong>Excel Tips:</strong> Pivot table-lardan istifadə edərək dinamik analizlər aparın. Filtrlər qoyaraq verilənləri fərqli açıdan təhlil edin.
             </div>
         </div>
-
         <div class="section">
             <h2>📊 PowerPoint Mərhələsi</h2>
             <p>Tələbələr təqdimatda aşağıdakıları göstərməlidirlər:</p>
-            
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">Slide 1</div>
                     <h4>Layihənin Məqsədi və İstifadə Olunan Cədvəllər</h4>
                     <p>Layihənin əsas məqsədini, istifadə olunan cədvəlləri və SQL scriptlərini təqdim edin.</p>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="timeline-date">Slide 2</div>
                     <h4>Tapdığınız Insightlar</h4>
                     <p>Analiz prosesində tapdığınız ən maraqlı və faydalı faktları paylaşın.</p>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="timeline-date">Slide 3</div>
                     <h4>Əsas Tapıntılar</h4>
                     <p>Ən yaxşı məhsullar, müştəri seqmentləri və satış trendlərini təqdim edin.</p>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="timeline-date">Slide 4</div>
                     <h4>Vizual Qrafiklər və Pivot Analizi</h4>
                     <p>Excel-də hazırladığınız vizuallaşdırmaları təqdim edin və onların işarə etdiyi tendensiyaları izah edin.</p>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="timeline-date">Slide 5</div>
                     <h4>Qısa Nəticə və Tövsiyələr</h4>
                     <p>Layihədən alınan əsas nəticələri və biznesə tətbiq oluna biləcək tövsiyələri təqdim edin.</p>
                 </div>
             </div>
-            
             <div class="success">
                 <strong>PowerPoint Təqdimatı üçün Tövsiyələr:</strong>
                 <ul>
@@ -600,40 +526,33 @@
                 </ul>
             </div>
         </div>
-
         <div class="section">
             <h2>🚀 Proyektin Həyata Keçirilməsi</h2>
-            
             <div class="card-grid">
                 <div class="card">
                     <div class="card-header">🔧 SQL Analiz</div>
                     <p>Verilənlər bazasında sorğular yazıb, bütün tapşırıqları yerinə yetirin. Hər sorğu üçün nəticələri yoxlayın və Excel-ə ixrac edin.</p>
-                </div>
-                
+                </div>    
                 <div class="card">
                     <div class="card-header">📊 Excel Vizuallaşdırma</div>
                     <p>SQL nəticələrini Excel-ə import edib, pivot cədvəllər və qrafiklər vasitəsilə məlumatları vizuallaşdırın.</p>
-                </div>
-                
+                </div> 
                 <div class="card">
                     <div class="card-header">🎤 PowerPoint Təqdimat</div>
                     <p>Təqdimat slaydlarını hazırlayın, tapıntılarınızı təqdim edin və tövsiyələrinizi izah edin.</p>
                 </div>
             </div>
-            
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">Həftə 1</div>
                     <h4>Verilənlər Bazası və SQL Sorğuları</h4>
                     <p>Verilənlər bazasını qurun, cədvəlləri yaradın və əsas sorğuları yazın.</p>
-                </div>
-                
+                </div> 
                 <div class="timeline-item">
                     <div class="timeline-date">Həftə 2</div>
                     <h4>Detallı Analiz və Excel Hazırlığı</h4>
                     <p>Bütün tapşırıqları yerinə yetirin, nəticələri Excel-ə ixrac edin və ilk vizuallaşdırmaları yaradın.</p>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="timeline-date">Həftə 3</div>
                     <h4>PowerPoint Təqdimatı və Nəticələrin Hazırlanması</h4>
@@ -641,10 +560,8 @@
                 </div>
             </div>
         </div>
-
         <div class="section">
-            <h2>✅ Proyektin Uğurlu Tamamlanması Üçün Tələblər</h2>
-            
+            <h2>✅ Proyektin Uğurlu Tamamlanması Üçün Tələblər</h2>      
             <div class="progress-container">
                 <div class="progress-title">
                     <span>SQL Sorğuları</span>
@@ -653,8 +570,7 @@
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 100%;"></div>
                 </div>
-            </div>
-            
+            </div>   
             <div class="progress-container">
                 <div class="progress-title">
                     <span>Excel Vizuallaşdırma</span>
@@ -663,8 +579,7 @@
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 100%;"></div>
                 </div>
-            </div>
-            
+            </div> 
             <div class="progress-container">
                 <div class="progress-title">
                     <span>PowerPoint Təqdimatı</span>
@@ -673,8 +588,7 @@
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 100%;"></div>
                 </div>
-            </div>
-            
+            </div> 
             <div class="highlight">
                 <strong>Uğurlu Proyekt üçün Əsas Elementlər:</strong>
                 <ul>
@@ -686,32 +600,26 @@
                 </ul>
             </div>
         </div>
-
         <div class="section">
-            <h2>💡 Tələbələr üçün Tövsiyələr</h2>
-            
+            <h2>💡 Tələbələr üçün Tövsiyələr</h2>  
             <div class="card-grid">
                 <div class="card">
                     <div class="card-header">📌 Planlaşdırma</div>
                     <p>Proyekti həftəlik plana bölüb, hər həftə üçün konkret məqsədlər qoyun.</p>
-                </div>
-                
+                </div>    
                 <div class="card">
                     <div class="card-header">🔍 Dəqiqlik</div>
                     <p>Hesablamalarda səhv olmaması üçün nəticələri müxtəlif yollarla yoxlayın.</p>
-                </div>
-                
+                </div> 
                 <div class="card">
                     <div class="card-header">🎨 Vizuallaşdırma</div>
                     <p>Excel qrafiklərinin professional görünüşü üçün rənglər, başlıqlar və etiketlərə diqqət yetirin.</p>
                 </div>
-                
                 <div class="card">
                     <div class="card-header">🗣️ Təqdimat</div>
                     <p>Təqdimat zamanı verilənləri sadəcə oxumayın, onların mənasını izah edin və təsiri haqqında danışın.</p>
                 </div>
-            </div>
-            
+            </div> 
             <div class="warning">
                 <strong>Diqqət Edilməli Sahələr:</strong>
                 <ul>
@@ -723,7 +631,6 @@
                 </ul>
             </div>
         </div>
-
         <footer>
             <p>© 2024 Retail E-commerce Sales Analysis Project | Prepared for Educational Purposes</p>
             <p>Designed to develop practical skills in SQL, Excel, and Business Presentation</p>
