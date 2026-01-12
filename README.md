@@ -1,56 +1,60 @@
-<H1> 🛒 RETAIL (E-COMMERCE) SALES ANALYSIS PROJECT </h1>
-    
+<h1 align="center">🛒 Retail (E-Commerce) Sales Analysis Project</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/SQL-Expert-blue?style=for-the-badge&logo=postgresql" />
+  <img src="https://img.shields.io/badge/Excel-Dashboard-green?style=for-the-badge&logo=microsoftexcel" />
+  <img src="https://img.shields.io/badge/PowerPoint-Presentation-orange?style=for-the-badge&logo=microsoftpowerpoint" />
+</p>
+
 <br>
-<br>
-📌 1. LAYİHƏNİN MƏQSƏDİ
-Bu layihə e-ticarət platformasının satış məlumatlarını SQL vasitəsilə analiz etmək, müştəri və məhsul davranışlarını öyrənmək və Excel-də vizuallaşdırmaq üçün hazırlanmışdır. Layihənin əsas hədəfi satış trendlərini müəyyən etmək və gəlirliliyi artırmaq üçün data-əsaslı tövsiyələr verməkdir.
 
-🏗 2. VERİLƏNLƏR BAZASI STRUKTURU (DATA SCHEMA)
-Layihədə istifadə olunan 5 əsas cədvəl aşağıdakı məlumatları əhatə edir:
+## 📝 Layihə Haqqında
+Bu layihə e-ticarət satış məlumatlarının dərindən analiz edilməsi üçün nəzərdə tutulub. **SQL** vasitəsilə verilənlər bazasından məlumatlar emal edilmiş, **Excel**-də Pivot və Chart-lar vasitəsilə vizuallaşdırılmış və strateji biznes tövsiyələri hazırlanmışdır.
 
-CUSTOMERS: Müştəri demoqrafiyası (Yaş, Cins, Şəhər).
-PRODUCTS: Məhsul portfeli, maya dəyəri və satış qiyməti.
-ORDERS: Sifariş statusları və ödəniş üsulları.
-ORDER_DETAILS: Sifariş miqdarı və endirim məlumatları.
-RETURNS: Qaytarılma halları və səbəbləri.
-💻 3. SQL ANALİZLƏRİ (DATA EXTRACTION)
-Analiz zamanı istifadə olunan əsas skript nümunələri:
+---
 
-🔹 Ümumi Mənfəətin Hesablanması:
-SQL
+## 🏗 1. Verilənlər Bazası Strukturu (Data Schema)
 
+Aşağıdakı cədvəllər arasında əlaqələr qurularaq analiz aparılmışdır:
+
+| Cədvəl Adı | Əsas Sütunlar | İzah |
+| :--- | :--- | :--- |
+| **CUSTOMERS** | `customer_id`, `age`, `city` | Müştəri demoqrafiyası |
+| **PRODUCTS** | `product_id`, `unit_price`, `cost_price` | Məhsul maliyyə məlumatları |
+| **ORDERS** | `order_id`, `order_date`, `status` | Sifarişin vəziyyəti |
+| **ORDER_DETAILS** | `quantity`, `discount` | Satış detalları |
+| **RETURNS** | `return_date`, `reason` | Qaytarılma səbəbləri |
+
+---
+
+## 💻 2. Texniki Analiz (SQL Queries)
+
+Layihənin əsasını təşkil edən mənfəət və satış hesablamaları üçün istifadə olunan SQL kodu:
+
+```sql
+/* Ümumi Xalis Mənfəətin Hesablanması */
 SELECT 
     p.product_name,
-    SUM(((p.unit_price * od.quantity) - od.discount) - (p.cost_price * od.quantity)) AS total_profit
+    SUM(((p.unit_price * od.quantity) - od.discount) - (p.cost_price * od.quantity)) AS net_profit
 FROM ORDER_DETAILS od
 JOIN PRODUCTS p ON od.product_id = p.product_id
 GROUP BY p.product_name
-ORDER BY total_profit DESC;
-🔹 Qaytarılma Faizinin Tapılması:
-SQL
+ORDER BY net_profit DESC;
+📊 3. Əsas Biznes İnsaytları
+Analiz nəticəsində əldə olunan kritik göstəricilər:
 
-SELECT 
-    (CAST(COUNT(r.return_id) AS FLOAT) / COUNT(o.order_id)) * 100 AS return_rate
-FROM ORDERS o
-LEFT JOIN RETURNS r ON o.order_id = r.order_id;
-📊 4. ƏSAS TAPINTILAR (KEY FINDINGS)
-Excel və SQL analizi nəticəsində əldə olunan mühüm insaytlar:
+<table> <tr> <td><b>Müştəri Seqmenti</b></td> <td>Ən aktiv alıcılar <b>50+ yaş</b> qrupundadır.</td> </tr> <tr> <td><b>Qaytarılma Faizi</b></td> <td>Ümumi sifarişlərin <b>19%</b>-i geri qaytarılır.</td> </tr> <tr> <td><b>Pik Dövr</b></td> <td>Satışlar əsasən <b>İyul və Oktyabr</b> aylarında maksimuma çatır.</td> </tr> </table>
+🛠 4. Qaytarılma Səbəblərinin Analizi
+Qaytarılmaların səbəblərini təhlil etdikdə aşağıdakı mənzərə yaranır:
 
-Yaş Seqmenti: Ən yüksək satış 50+ yaş qrupundadır.
-Satış Trendi: İyul və Oktyabr ayları ən yüksək satış dövrləridir.
-Qaytarılma Problemi: Ümumi satışların 19%-i geri qaytarılır.
-Ödəniş: Nəqd və Kart ödənişləri demək olar ki, bərabər paya malikdir (31-35%).
-💡 5. STRATEJİ TÖVSİYƏLƏR
-Analiz nəticəsində şirkət rəhbərliyi üçün aşağıdakı tövsiyələr hazırlanmışdır:
-
-Logistika: Qaytarılmaların 36%-i olan "Yanlış Məhsul" problemini həll etmək üçün anbar barkod sisteminə keçid edilməlidir.
-Məhsul Təqdimatı: 37% "Müştəri Narazılığı"nı azaltmaq üçün vebsaytda məhsulların video-icmalları yerləşdirilməlidir.
-Marketinq: Gənc yaş qrupunu (18-24) cəlb etmək üçün xüsusi sosial media kampaniyaları başladılmalıdır.
-Qiymətləndirmə: Mənfəəti mənfiyə salan aqressiv endirim kampaniyaları optimallaşdırılmalıdır.
-📁 6. LAYİHƏ MATERİALLARI
-📂 /sql_queries — SQL skriptləri.
-📂 /excel_dashboard — Analiz faylları və chart-lar.
-📂 /presentation — PowerPoint hesabatı.
-<br>
-Author: [Tural Zamanlı]
-Tools: SQL, MS Excel, PowerPoint
+Səbəb (Reason)	Payı (%)	Həll Yolu
+Müştəri Narazılığı	37%	Məhsul təsvirlərinin (video/şəkil) optimallaşdırılması
+Yanlış Məhsul	36%	Anbar barkod və SKU yoxlama sisteminin qurulması
+Defektli Məhsul	27%	Qablaşdırma və logistika keyfiyyətinin artırılması
+💡 5. Strateji Tövsiyələr
+<p align="justify"> 1. <b>Logistika:</b> Səhv göndərilən məhsulların (36%) qarşısını almaq üçün avtomatlaşdırılmış anbar sisteminə keçid şərtdir.<br> 2. <b>Marketinq:</b> 18-24 yaş arası gənc kütləni cəlb etmək üçün rəqəmsal kampaniyalar gücləndirilməlidir.<br> 3. <b>Maliyyə:</b> Mənfəəti azaldan "Həddindən artıq endirim" (Aggressive Discounting) siyasətinə limitlər qoyulmalıdır. </p>
+📂 Layihə Materialları
+ SQL Scriptlər (/queries)
+ Excel Dashboard (/vizualization)
+ PowerPoint Presentation (/report)
+<br><p align="center"> <b>Müəllif: [Adınız Soyadınız]</b><br> <i>Data Analyst Portfolio Project</i> </p> ```
